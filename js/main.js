@@ -3,12 +3,12 @@ import elements from './base.js';
 
 async function uiController(repo, userName) {
     const uiController = await import('./uiController.js');
-    return await uiController.renderRepo(repo, userName);
+    uiController.renderRepo(repo, userName);
 }
 
 async function repoController (userName) {
-    const repoController = await import('./repoController.js')
-    const repos = await repoController.getRepos(userName)
+    const repoController = await import('./repoController.js');
+    const repos = await repoController.getRepos(userName);
     
     // empty the container
     elements.reposData.innerHTML = ``;
