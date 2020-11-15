@@ -1,6 +1,11 @@
 // import files
 import elements from './base.js';
 
+async function uiController(repo) {
+    const uiController = await import('./uiController.js');
+    uiController.renderRepo(repo, userName);
+}
+
 async function repoController (userName) {
     const repoController = await import('./repoController.js')
     const repos = await repoController.getRepos(userName)
@@ -9,11 +14,7 @@ async function repoController (userName) {
     elements.reposData.innerHTML = ``;
 
     // loop in repositries
-    repos.forEach(repo => {
-        import('./uiController.js').then(uiController => {
-            uiController.renderRepo(repo, userName);
-        });
-    });
+    repos.forEach(repo => uiController(repo));
 }
 
 // get repos function
