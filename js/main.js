@@ -3,7 +3,7 @@ import elements from './base.js';
 
 async function uiController(repo, userName) {
     const uiController = await import('./uiController.js');
-    uiController.renderRepo(repo, userName);
+    return await uiController.renderRepo(repo, userName);
 }
 
 async function repoController (userName) {
