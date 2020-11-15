@@ -17,10 +17,9 @@ async function repoController (userName) {
     repos.forEach(repo => uiController(repo));
 }
 
-// get repos function
+// module controller function
 const moduleController = (userName) => {
-    if (userName == '') { 
-        // if value is empty
+    if (userName == '') { // if value is empty
         elements.reposData.innerHTML = `<span>Please Write Github Username</span>`;  
     }
     else repoController(userName);
