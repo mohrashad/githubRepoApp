@@ -11,6 +11,6 @@ export const renderRepo = (repo, userName) => {
                     </div>
                 </div>
         </div>
-    `
+    `;
     elements.reposData.insertAdjacentHTML('beforeend', html);
 }
