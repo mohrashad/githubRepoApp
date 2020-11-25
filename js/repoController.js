@@ -1,5 +1,4 @@
 export async function getRepos(userName) {
-    const res = await fetch(`https://api.github.com/users/${userName}/repo`);
-    document.write(res);
+    const res = await fetch(`https://api.github.com/users/${userName}/repo`)
     return await res.json();
 }
