@@ -4,11 +4,12 @@ import elements from './base.js';
 // ui controller function
 async function uiController(repo, userName) {
     const uiController = await import('./uiController.js');
+    uiController.clearInput();
     uiController.renderRepo(repo, userName);
 }
 
 // repo controller function
-async function repoController (userName) {
+async function repoController (userName)  {
     const repoController = await import('./repoController.js');
     const repos = await repoController.getRepos(userName);
     
