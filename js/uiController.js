@@ -14,3 +14,5 @@ export const renderRepo = (repo, userName) => {
     `;
     elements.reposData.insertAdjacentHTML('beforeend', html);
 }
+
+export const clearInput => elements.theInput.value = '';
